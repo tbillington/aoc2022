@@ -3,7 +3,7 @@ use std::{collections::BinaryHeap, str::FromStr};
 fn elf_calories<'a>(input: &'a str) -> impl Iterator<Item = u32> + 'a {
     input
         .split("\n\n")
-        .map(|l| l.lines().map(u32::from_str).map(Result::unwrap).sum())
+        .map(|elf| elf.lines().map(u32::from_str).map(Result::unwrap).sum())
 }
 
 fn part1(input: &str) -> u32 {
@@ -17,7 +17,7 @@ fn part2(input: &str) -> u32 {
         .into_iter()
         .rev()
         .take(3)
-        .sum::<u32>()
+        .sum()
 }
 
 fn main() {
@@ -26,6 +26,7 @@ fn main() {
 }
 
 /*
+
 --- Day 1: Calorie Counting ---
 
 Santa's reindeer typically eat regular reindeer food, but they need a lot of magical energy to deliver presents on Christmas. For that, their favorite snack is a special type of star fruit that only grows deep in the jungle. The Elves have brought you on their annual expedition to the grove where the fruit grows.
