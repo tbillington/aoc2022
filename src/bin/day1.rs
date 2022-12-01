@@ -22,8 +22,8 @@ fn part2(input: &str) -> u32 {
 
 fn main() {
     let input = include_str!("day1.txt");
-    println!("part 1: {:?}", part1(input));
-    println!("part 2: {:?}", part2(input));
+    println!("part 1: {}", part1(input));
+    println!("part 2: {}", part2(input));
 }
 
 /*
