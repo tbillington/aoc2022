@@ -110,13 +110,13 @@ impl Score for Round<Hand, Outcome> {
     }
 }
 
-fn score<'a, Round>(input: &'a str) -> u32
+fn score<'a, R>(input: &'a str) -> u32
 where
-    Round: From<(&'a str, &'a str)> + Score,
+    R: From<(&'a str, &'a str)> + Score,
 {
     input
         .lines()
-        .filter_map(|l| l.split_once(' ').map(Round::from).map(|r| r.score()))
+        .filter_map(|l| l.split_once(' ').map(R::from).map(|r| r.score()))
         .sum()
 }
 
