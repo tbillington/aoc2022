@@ -57,7 +57,7 @@ impl From<&str> for Outcome {
             "X" => Self::Lose,
             "Y" => Self::Draw,
             "Z" => Self::Win,
-            _ => panic!("unexpected character for hand: {c}"),
+            _ => panic!("unexpected character for outcome: {c}"),
         }
     }
 }
