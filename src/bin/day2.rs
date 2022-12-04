@@ -72,16 +72,6 @@ impl Outcome {
     }
 }
 
-impl From<Hand> for Outcome {
-    fn from(h: Hand) -> Self {
-        match h {
-            Hand::Rock => todo!(),
-            Hand::Paper => todo!(),
-            Hand::Scissors => todo!(),
-        }
-    }
-}
-
 struct Round<A, B>(A, B);
 
 impl<A, B> AsRef<Round<A, B>> for Round<A, B> {
