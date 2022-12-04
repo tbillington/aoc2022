@@ -16,9 +16,9 @@ impl From<&str> for Hand {
 }
 
 impl From<(&Hand, &Outcome)> for Hand {
-    fn from((h, o): (&Hand, &Outcome)) -> Self {
+    fn from(pair: (&Hand, &Outcome)) -> Self {
         use {Hand::*, Outcome::*};
-        match (h, o) {
+        match pair {
             (Rock, Win) | (Paper, Draw) | (Scissors, Lose) => Paper,
             (Rock, Draw) | (Paper, Lose) | (Scissors, Win) => Rock,
             (Rock, Lose) | (Paper, Win) | (Scissors, Draw) => Scissors,
