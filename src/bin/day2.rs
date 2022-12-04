@@ -74,12 +74,6 @@ impl Outcome {
 
 struct Round<A, B>(A, B);
 
-impl<A, B> AsRef<Round<A, B>> for Round<A, B> {
-    fn as_ref(&self) -> &Self {
-        &self
-    }
-}
-
 impl<'a, A, B> From<(&'a str, &'a str)> for Round<A, B>
 where
     A: From<&'a str>,
