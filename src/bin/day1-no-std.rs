@@ -3,8 +3,6 @@
 
 use core::str::FromStr;
 
-use libc::printf;
-
 extern crate libc;
 
 fn elf_calories<'a>(input: &'a str) -> impl Iterator<Item = u32> + 'a {
@@ -40,8 +38,8 @@ fn part2(input: &str) -> u32 {
 pub unsafe extern "C" fn main(_argc: i32, _argv: *const *const u8) -> i32 {
     let input = include_str!("day1.txt");
 
-    printf("part 1: %d\n\0".as_ptr() as *const i8, part1(input));
-    printf("part 2: %d\n\0".as_ptr() as *const i8, part2(input));
+    libc::printf("part 1: %d\n\0".as_ptr() as *const i8, part1(input));
+    libc::printf("part 2: %d\n\0".as_ptr() as *const i8, part2(input));
 
     0
 }
