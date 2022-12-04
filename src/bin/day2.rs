@@ -80,10 +80,6 @@ impl<A, B> AsRef<Round<A, B>> for Round<A, B> {
     }
 }
 
-trait Score {
-    fn score(&self) -> u32;
-}
-
 impl<'a, A, B> From<(&'a str, &'a str)> for Round<A, B>
 where
     A: From<&'a str>,
@@ -92,6 +88,10 @@ where
     fn from((l, r): (&'a str, &'a str)) -> Self {
         Self(A::from(l), B::from(r))
     }
+}
+
+trait Score {
+    fn score(&self) -> u32;
 }
 
 impl Score for Round<Hand, Hand> {
